@@ -7,7 +7,7 @@
   background-image: url('Leeza-008.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.25;
+  opacity: 0.3;
   z-index: -1;
   pointer-events: none; /* Prevent interaction */
 }
