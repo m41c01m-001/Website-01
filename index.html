@@ -790,6 +790,81 @@
             color: #1877f2;
             text-decoration: underline;
         }
+        
+        /* --- UPCOMING EVENTS --- */
+.upcoming-events-section {
+    background-color: white;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .events-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .events-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.event-card {
+    background-color: var(--bg-paper);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.event-date, .event-location {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+
+
+        
     </style>
     <!-- Google Fonts Fallback provided in CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -814,6 +889,7 @@
                 <div class="nav-links">
                     <a href="#about" class="nav-link">About</a>
                     <a href="#services" class="nav-link">Services</a>
+                    <a href="#events" class="nav-link">Events</a>
                     <a href="#listen" class="nav-link">Listen</a>
                     <a href="#reviews" class="nav-link">Reviews</a>
                     <a href="#contact" class="btn btn-primary">Book Now</a>
@@ -830,6 +906,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#events" onclick="toggleMenu()">Events</a>
         <a href="#listen" onclick="toggleMenu()">Listen</a>
         <a href="#reviews" onclick="toggleMenu()">Reviews</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -992,6 +1069,34 @@ Whether you’re planning an intimate ceremony, a relaxed garden reception, or a
                </div>
         </div>
     </section>
+    
+    <!-- Upcoming Events Section -->
+<section id="events" class="section upcoming-events-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Calendar</span>
+            <h2>Upcoming Events</h2>
+        </div>
+
+        <div class="events-grid">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="./image/Leeza-event01.jpeg" alt="Upcoming Event">
+                </div>
+                <div class="event-content">
+                    <h3>Event Title</h3>
+                    <p class="event-date"><i class="far fa-calendar"></i> Saturday 24th October 2026 </p>
+                    <p class="event-time"><i class="far fa-clock"></i> 7 pm - 10:30 pm </p>
+                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Hitcham Village Hall</p>
+                    <p class="event-description">Harvest Supper</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
     <!-- Listen Section -->
     <section id="listen" class="section">
         <div class="container text-center">
