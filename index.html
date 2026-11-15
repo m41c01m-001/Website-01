@@ -1,1008 +1,1467 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical Digital & Computer Support | Friendly Tech Help</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            500: '#0284c7',
-                            600: '#0369a1',
-                            700: '#035485',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            dark: '#0f172a',
-                        },
-                        accent: {
-                            500: '#06b6d4',
-                            600: '#0891b2',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .gradient-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-        }
-        .glow-hover {
-            transition: all 0.3s ease;
-        }
-        .glow-hover:hover {
-            box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.25);
-            transform: translateY(-2px);
-        }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Leeza Cook — Violinist & Vocalist in Suffolk | Weddings & Events</title>
+    <meta name="description" content="Leeza Cook — professional violinist & vocalist based in Ipswich, Suffolk. Available for weddings, ceremonies & events nationwide & across Europe. Listen & book online." >
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-                        <i class="fa-solid me-0 fa-laptop-code text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">Practical Digital</span>
-                        <span class="text-xs font-medium text-brand-600 block mt-1 tracking-wide uppercase">& Computer Support</span>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">   
+    
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        :root {
+            --primary: #7a4b8a;
+            --primary-light: #c29aa8;
+            --primary-dark: #5e376b;
+            --bg-paper: #f9f8f6;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-sans: 'Lato', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-paper);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .text-white { color: var(--white); }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 6px rgba(122, 75, 138, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(122, 75, 138, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(122, 75, 138, 0.05);
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+        
+ 
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-serif);
+            font-weight: bold;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-circle {
+            transform: rotate(360deg);
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: block;
+            color: var(--text-muted);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+            transform: translateY(-150%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.open {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .mobile-menu a:hover {
+            background-color: var(--bg-paper);
+            color: var(--primary);
+        }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        /* --- ABOUT / HERO SECTION (TOP) --- */
+        .about-hero {
+            padding-top: 100px; /* Reduced from 140px */
+            padding-bottom: 5rem;
+            min-height: 80vh; /* Makes it take up more vertical space */
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Ensure the container takes full width */
+        .about-hero .container {
+            width: 100%;
+        }
+        
+        /* Make the background watermark show through the navbar slightly */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 4/5;
+        }
+        
+        /* Fallback for image if offline */
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #ddd, #f0f0f0);
+            z-index: -1;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(122, 75, 138, 0.1);
+            color: var(--primary);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .about-content h2 span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .duo-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .duo-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 0.5rem;
+            background-color: #eee;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .duo-thumb img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        @media (min-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-content h2 {
+                font-size: 3.5rem;
+            }
+            /* Order: Text Left, Image Right on Desktop */
+            .about-content { order: 1; }
+            .about-image-wrapper { order: 2; }
+        }
+
+        /* --- SERVICES --- */
+        .services-section {
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .service-card {
+            background-color: var(--bg-paper);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .service-note {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #94a3b8;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* --- AUDIO PLAYER --- */
+        .player-container {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #f1f5f9;
+        }
+
+        .player-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .album-art {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .control-btn {
+            color: white;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .control-btn:hover { opacity: 1; }
+
+        .play-btn {
+            width: 56px;
+            height: 56px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 1;
+            transition: transform 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .progress-container {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-filled {
+            height: 100%;
+            background: white;
+            border-radius: 2px;
+            width: 0%;
+            position: relative;
+        }
+        
+        .progress-filled::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -4px;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .progress-bar:hover .progress-filled::after {
+            opacity: 1;
+        }
+
+        .time-stamps {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            font-family: monospace;
+            opacity: 0.7;
+        }
+
+        .playlist {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: left;
+            width: 100%;
+        }
+
+        .track-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .track-item.active {
+            background-color: rgba(122, 75, 138, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+
+        .track-number {
+            width: 24px;
+            height: 24px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #64748b;
+        }
+
+        .track-item.active .track-number {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* --- REVIEWS --- */
+        .reviews-section {
+            background-color: var(--primary-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* abstract bg shapes */
+        .bg-shape-1 {
+            position: absolute;
+            top: 0; left: 0;
+            width: 300px; height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (min-width: 768px) {
+            .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-quote {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            background: rgba(194, 154, 168, 0.2);
+            color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* --- CONTACT --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: rgba(122, 75, 138, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f1f5f9;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .form-row { grid-template-columns: 1fr 1fr; }
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-family: inherit;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(122, 75, 138, 0.1);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- SCROLL TO TOP --- */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            font-size: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 900;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        
+        .facebook-link {
+            font-size: 14px;
+            color: #1877f2; /* Official Facebook blue */
+            text-decoration: none;
+        }
+        .facebook-link:hover {
+            color: #1877f2;
+            text-decoration: underline;
+        }
+        
+        /* --- UPCOMING EVENTS --- */
+.upcoming-events-section {
+    background-color: white;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .events-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .events-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.event-card {
+    background-color: var(--bg-paper);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.event-date, .event-location {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.event-description,
+.event-date,
+.event-time,
+.event-location {
+  margin: 0;
+  margin-bottom: 0.35rem;  /* optional: uniform spacing */
+}
+
+        
+    </style>
+    <!-- Google Fonts Fallback provided in CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <a href="#" class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+
+                <!-- LOGO REPLACED HERE -->
+                <img src="./image/LC.png" alt="Leeza Cook Logo" class="logo-circle">
+
+                <div class="logo-text">
+                    <h1>Leeza Cook</h1>
+                        <p>Violinist & Vocalist</p>
                     </div>
                 </a>
-
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                    <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
-                    <a href="#calculator" class="hover:text-brand-600 transition-colors">Cost Estimator</a>
-                    <a href="#pricing" class="hover:text-brand-600 transition-colors">Pricing</a>
-                    <a href="#rules" class="hover:text-brand-600 transition-colors">Our Promises</a>
-                    <a href="#portfolio" class="hover:text-brand-600 transition-colors">Our Work</a>
-                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-                        Get in Touch
-                    </a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#services" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Services</a>
-            <a href="#calculator" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Cost Estimator</a>
-            <a href="#pricing" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Pricing</a>
-            <a href="#rules" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Our Promises</a>
-            <a href="#portfolio" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Our Work</a>
-            <a href="#contact" class="block w-full text-center mt-2 px-5 py-3 rounded-xl bg-brand-600 text-white font-medium shadow-sm">
-                Get in Touch
-            </a>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="relative gradient-hero text-white overflow-hidden py-20 lg:py-28">
-        <!-- Background subtle accent shapes -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <div class="absolute top-10 left-10 w-96 h-96 rounded-full bg-accent-500 blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-brand-500 blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-8">
-                    <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-wider text-accent-500">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Friendly Local Support
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Friendly, Practical Digital & Computer Support
-                    </h1>
-
-                    <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-                        I help individuals and small businesses get their computers, websites, and digital jobs sorted — <span class="text-white font-semibold underline decoration-accent-500/60 underline-offset-4">without complicated technical jargon</span>.
-                    </p>
-
-                    <!-- Call to Action Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a href="#services" class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-base shadow-lg hover:shadow-brand-500/30 transition-all hover:-translate-y-0.5">
-                            View Services & Pricing
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
-                        <a href="#contact" class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-base transition-all">
-                            Get in Touch
-                        </a>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="pt-6 border-t border-slate-700/60 grid grid-cols-3 gap-4">
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-                            <span class="text-sm font-medium text-slate-300">No Jargon</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-                            <span class="text-sm font-medium text-slate-300">Upfront Fixed Rates</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-                            <span class="text-sm font-medium text-slate-300">Friendly Service</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Graphic Card -->
-                <div class="lg:col-span-5">
-                    <div class="bg-slate-800/80 backdrop-blur-md border border-slate-700 rounded-2xl p-6 shadow-2xl space-y-6">
-                        <div class="flex items-center justify-between border-b border-slate-700 pb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-white text-base">How I Can Help You</h3>
-                                    <p class="text-xs text-slate-400">Fast, reliable & honest help</p>
-                                </div>
-                            </div>
-                            <span class="px-2.5 py-1 text-xs font-semibold rounded bg-brand-500/20 text-brand-300 border border-brand-500/30">Available Now</span>
-                        </div>
-
-                        <ul class="space-y-3.5 text-sm text-slate-300">
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-check text-accent-500 mt-1"></i>
-                                <span><strong>Computers & Devices:</strong> Setup, slow laptops, email & Wi-Fi issues.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-check text-accent-500 mt-1"></i>
-                                <span><strong>Websites:</strong> Updates, minor fixes or brand new simple websites.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-check text-accent-500 mt-1"></i>
-                                <span><strong>Print Artwork:</strong> Business cards, flyers & leaflet designs.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-check text-accent-500 mt-1"></i>
-                                <span><strong>Business Digital:</strong> Google setup, online forms & spreadsheet help.</span>
-                            </li>
-                        </ul>
-
-                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/80 text-xs text-slate-400 flex items-center justify-between">
-                            <span>Standard Support Rate:</span>
-                            <span class="text-emerald-400 font-bold text-sm">£30 / hour</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Tailored Digital Support</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">What Can I Help You With Today?</p>
-                <p class="mt-4 text-lg text-slate-600">Select a category below to explore specific services and straightforward pricing.</p>
-            </div>
-
-            <!-- Service Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-10" id="service-tabs">
-                <button onclick="filterServices('all')" class="tab-btn active px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-brand-600 text-white shadow-sm" data-category="all">
-                    All Services
-                </button>
-                <button onclick="filterServices('tech')" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="tech">
-                    💻 Computer & Tech
-                </button>
-                <button onclick="filterServices('web')" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="web">
-                    🌐 Website Services
-                </button>
-                <button onclick="filterServices('maint')" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="maint">
-                    🔧 Website Maintenance
-                </button>
-                <button onclick="filterServices('print')" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="print">
-                    🎨 Print & Design
-                </button>
-                <button onclick="filterServices('biz')" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="biz">
-                    📱 Digital Business
-                </button>
-            </div>
-
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-
-                <!-- 1. Computer & Technology Support -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between" data-cat="tech">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center text-2xl font-bold">
-                                💻
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">£30 / hour</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Computer & Device Support</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Help with everyday technology for home users and small business setups without the jargon.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> PC & laptop setup</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Software installation & configuration</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Email setup & troubleshooting</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Printer, scanner & Wi-Fi issues</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Smartphone & tablet assistance</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> File organisation & backup solutions</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Computer & Technology Help (£30/hr)')" class="w-full text-center py-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 text-brand-600 font-semibold text-xs border border-slate-200 hover:border-brand-300 transition-all">
-                        Request Tech Support
-                    </a>
-                </div>
-
-                <!-- 2. Website Updates & Small Changes -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between" data-cat="web">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-accent-600 flex items-center justify-center text-2xl font-bold">
-                                🌐
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">From £30 / hour</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Website Updates & Tweaks</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Keep your existing website fresh, working properly, and up to date.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Change text, photos & layout</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Add new pages, events or services</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Update contact details & links</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Add embedded widgets or video</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Fixed price small tweaks from £40</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Website Updates (£30/hr or fixed from £40)')" class="w-full text-center py-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 text-brand-600 font-semibold text-xs border border-slate-200 hover:border-brand-300 transition-all">
-                        Update My Website
-                    </a>
-                </div>
-
-                <!-- 3. Simple Business Website -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border-2 border-brand-500 relative shadow-md flex flex-col justify-between" data-cat="web">
-                    <span class="absolute -top-3 right-6 bg-brand-500 text-white text-xs font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider">Most Popular</span>
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-2xl font-bold">
-                                🚀
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-brand-50 text-brand-700 rounded-full">From £400</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Simple Business Website</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">A straightforward, modern mobile-friendly website tailored for small businesses & sole traders.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Tradespeople, Musicians, Cleaners, Photographers & Local Services</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Home, About, Services & Photo Gallery</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Interactive Contact & Enquiry Form</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Fully Mobile-Friendly & Social Links</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Simple Business Website (from £400)')" class="w-full text-center py-2.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs transition-all shadow-sm">
-                        Get a Web Quote
-                    </a>
-                </div>
-
-                <!-- 4. Website Maintenance Care Plan -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between" data-cat="maint">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold">
-                                🔧
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">£40 / month</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Website Care Plan</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Peace of mind for small websites. Includes monthly updates and general technical care.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Up to 1 hour of minor updates included/mo</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Minor text changes & image replacements</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Routine functionality & health checks</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Priority support for web issues</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Website Care Plan (£40/month)')" class="w-full text-center py-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 text-brand-600 font-semibold text-xs border border-slate-200 hover:border-brand-300 transition-all">
-                        Subscribe to Care Plan
-                    </a>
-                </div>
-
-                <!-- 5. Business Cards & Printed Artwork -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between" data-cat="print">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-bold">
-                                🎨
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">From £35</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Business Cards & Artwork</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Professional, print-ready designs for business cards, flyers, and promotional posters.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Business Card Design (from £35)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Flyer / Leaflet / Poster Design (from £45)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Print-ready high resolution PDF supplied</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Great for local trades, events & promotions</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Business Cards & Print Design (from £35)')" class="w-full text-center py-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 text-brand-600 font-semibold text-xs border border-slate-200 hover:border-brand-300 transition-all">
-                        Order Artwork Design
-                    </a>
-                </div>
-
-                <!-- 6. Digital Business Support -->
-                <div class="service-card glow-hover bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm flex flex-col justify-between" data-cat="biz">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold">
-                                📱
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 bg-slate-100 text-slate-700 rounded-full">£30 / hour</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Digital Business Support</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Practical assistance with the everyday online tasks of running a business.</p>
-                        <ul class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Setting up Google services & online tools</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Online booking systems & forms</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Basic spreadsheets & digital organization</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Social media & content assistance</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" onclick="preselectService('Digital Business Support (£30/hr)')" class="w-full text-center py-2.5 rounded-lg bg-slate-50 hover:bg-brand-50 text-brand-600 font-semibold text-xs border border-slate-200 hover:border-brand-300 transition-all">
-                        Get Business Digital Help
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE ESTIMATOR / CALCULATOR SECTION -->
-    <section id="calculator" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-semibold uppercase tracking-wider">Instant Quote Calculator</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Estimate Your Project Cost</h2>
-                <p class="text-slate-400 mt-2 text-base">Select the services you require for a transparent, instant price estimate.</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-10 shadow-2xl">
-                <div class="grid md:grid-cols-12 gap-8">
-                    <!-- Calculator Inputs -->
-                    <div class="md:col-span-7 space-y-6">
-                        <h3 class="text-lg font-bold text-white border-b border-slate-700 pb-3 flex items-center gap-2">
-                            <i class="fa-solid fa-sliders text-accent-500"></i> Select Services Required:
-                        </h3>
-
-                        <!-- Item 1: Hourly Support -->
-                        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-700/70 space-y-3">
-                            <div class="flex justify-between items-center">
-                                <label class="font-semibold text-sm text-slate-200 flex items-center gap-2">
-                                    <i class="fa-solid fa-clock text-brand-400"></i> Tech & Digital Help Hours
-                                </label>
-                                <span class="text-xs text-brand-400 font-bold">£30 / hour</span>
-                            </div>
-                            <div class="flex items-center justify-between gap-4">
-                                <span class="text-xs text-slate-400">Hours needed: <strong id="hours-val" class="text-white">0 hrs</strong></span>
-                                <input type="range" id="hours-range" min="0" max="10" value="0" step="1" oninput="updateCalculator()" class="w-1/2 accent-brand-500 cursor-pointer">
-                            </div>
-                        </div>
-
-                        <!-- Item 2: Simple Website -->
-                        <div class="flex items-center justify-between p-4 bg-slate-900/60 rounded-xl border border-slate-700/70">
-                            <div>
-                                <div class="font-semibold text-sm text-slate-200">Simple Business Website</div>
-                                <div class="text-xs text-slate-400">Complete multi-page site with contact form</div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-bold text-emerald-400">£400</span>
-                                <input type="checkbox" id="calc-web" onchange="updateCalculator()" class="w-5 h-5 rounded accent-brand-500 cursor-pointer">
-                            </div>
-                        </div>
-
-                        <!-- Item 3: Website Care Plan -->
-                        <div class="flex items-center justify-between p-4 bg-slate-900/60 rounded-xl border border-slate-700/70">
-                            <div>
-                                <div class="font-semibold text-sm text-slate-200">Monthly Website Maintenance</div>
-                                <div class="text-xs text-slate-400">Includes 1hr updates & checks per month</div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-bold text-emerald-400">£40/mo</span>
-                                <input type="checkbox" id="calc-maint" onchange="updateCalculator()" class="w-5 h-5 rounded accent-brand-500 cursor-pointer">
-                            </div>
-                        </div>
-
-                        <!-- Item 4: Business Card Design -->
-                        <div class="flex items-center justify-between p-4 bg-slate-900/60 rounded-xl border border-slate-700/70">
-                            <div>
-                                <div class="font-semibold text-sm text-slate-200">Business Card Artwork</div>
-                                <div class="text-xs text-slate-400">Print-ready custom layout & artwork</div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-bold text-emerald-400">£35</span>
-                                <input type="checkbox" id="calc-card" onchange="updateCalculator()" class="w-5 h-5 rounded accent-brand-500 cursor-pointer">
-                            </div>
-                        </div>
-
-                        <!-- Item 5: Flyer Design -->
-                        <div class="flex items-center justify-between p-4 bg-slate-900/60 rounded-xl border border-slate-700/70">
-                            <div>
-                                <div class="font-semibold text-sm text-slate-200">Flyer / Poster Artwork</div>
-                                <div class="text-xs text-slate-400">Print-ready promo flyer artwork</div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-bold text-emerald-400">£45</span>
-                                <input type="checkbox" id="calc-flyer" onchange="updateCalculator()" class="w-5 h-5 rounded accent-brand-500 cursor-pointer">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Calculator Summary Display -->
-                    <div class="md:col-span-5 bg-gradient-to-b from-brand-900/80 to-slate-900 p-6 rounded-2xl border border-brand-500/30 flex flex-col justify-between">
-                        <div>
-                            <h4 class="text-base font-bold text-white mb-4 border-b border-brand-500/20 pb-2">Estimate Summary</h4>
-                            
-                            <div id="calc-breakdown" class="space-y-2 text-xs text-slate-300 min-h-[120px]">
-                                <p class="text-slate-400 italic">No services selected yet. Use the toggles on the left to start.</p>
-                            </div>
-
-                            <div class="border-t border-brand-500/30 pt-4 mt-6">
-                                <div class="text-xs text-slate-400 uppercase font-semibold">Estimated Total</div>
-                                <div class="text-3xl font-extrabold text-white mt-1" id="calc-total">£0</div>
-                                <p class="text-[11px] text-slate-400 mt-1">Final price confirmed before starting. Introductory transparent pricing.</p>
-                            </div>
-                        </div>
-
-                        <button onclick="bookCalculatedEstimate()" class="mt-6 w-full py-3 px-4 rounded-xl bg-brand-500 hover:bg-brand-600 font-bold text-white text-sm shadow-md transition-all hover:shadow-brand-500/30">
-                            Book This Quote
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SIMPLE RULES & PROMISES SECTION -->
-    <section id="rules" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Our Guarantees</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">A Few Simple Rules</p>
-                <p class="mt-4 text-slate-600 text-base">Honest, reliable support designed to keep technology hassle-free.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Rule 1 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-brand-300 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">No Complicated Quotes</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">For small jobs, I’ll tell you the exact price before starting work. Clear, direct and simple.</p>
-                </div>
-
-                <!-- Rule 2 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-brand-300 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">No Surprise Bills</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">If a job turns out to be bigger than expected, I’ll explain everything clearly before doing additional work.</p>
-                </div>
-
-                <!-- Rule 3 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-brand-300 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">Fixed-Price Jobs</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Where possible, I’ll agree a fixed price upfront rather than watching the clock while I work.</p>
-                </div>
-
-                <!-- Rule 4 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 hover:border-brand-300 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-receipt"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-900 text-lg mb-2">Transparent Costs</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Third-party items (domain registration, hosting, printing) are charged separately without hidden markups.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUICK PRICING SUMMARY TABLE SECTION -->
-    <section id="pricing" class="py-16 bg-slate-50 border-t border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">The Simple Pricing Version</h2>
-                <p class="text-slate-600 text-sm mt-2">Transparent, affordable rates for every task.</p>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
-                            <th class="py-4 px-6 font-semibold">Service Requirement</th>
-                            <th class="py-4 px-6 font-semibold text-right">Introductory Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-sm">
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Computer / Technology Help</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-brand-600">£30 / hour</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Website Updates & Content Fixes</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-brand-600">£30 / hour</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Digital Business Support</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-brand-600">£30 / hour</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Small Website Fixed Changes</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-slate-900">from £40</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Business Card Design</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-slate-900">from £35</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Flyer / Leaflet / Poster Design</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-slate-900">from £45</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors">
-                            <td class="py-3.5 px-6 font-medium text-slate-800">Website Care / Maintenance</td>
-                            <td class="py-3.5 px-6 text-right font-bold text-emerald-600">£40 / month</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 transition-colors bg-brand-50/50">
-                            <td class="py-3.5 px-6 font-semibold text-slate-900">Simple Business Website Complete</td>
-                            <td class="py-3.5 px-6 text-right font-extrabold text-brand-700">from £400</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="p-4 bg-slate-100 text-center text-xs text-slate-500">
-                    Need something specific not listed above? Just ask! All quotes are provided upfront.
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Our Work / Portfolio Section -->
-<section id="portfolio" style="padding: 60px 20px; background-color: #f8fafc;">
-  <div style="max-width: 1100px; margin: 0 auto;">
-    
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 style="font-size: 2rem; color: #1e293b; margin-bottom: 10px; font-weight: 700;">Recent Work & Portfolio</h2>
-      <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-        A showcase of recent digital projects, print designs, and small business websites created for local clients.
-      </p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-      
-      <!-- Project 1: Leeza Cook Website -->
-      <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
-        <div style="background: #0f172a; padding: 25px 20px; text-align: center; color: #ffffff;">
-          <div style="font-size: 2.5rem; margin-bottom: 8px;">🎻</div>
-          <span style="background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px;">Web Design</span>
-        </div>
-        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <h3 style="font-size: 1.25rem; color: #0f172a; margin-top: 0; margin-bottom: 8px;">Leeza Cook — Professional Violinist</h3>
-            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">
-              A clean, elegant, mobile-friendly website created for a local musician to feature performance services, bio, media, and contact booking forms.
-            </p>
-          </div>
-          <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 10px 16px; background-color: #2563eb; color: #ffffff; font-weight: 600; text-decoration: none; border-radius: 6px; text-align: center; font-size: 0.95rem; transition: background 0.2s ease;">
-            Visit Website &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 2: Business Card Design -->
-      <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
-        <div style="background: #f1f5f9; position: relative; overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
-          <img src="LCBC.jpg" alt="Leeza Cook - Violin Tutor Business Card" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="margin-bottom: 10px;">
-              <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px;">Business Card Design</span>
-            </div>
-            <h3 style="font-size: 1.25rem; color: #0f172a; margin-top: 0; margin-bottom: 8px;">Leeza Cook - Violin Tutor</h3>
-            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">
-              Print artwork layout designed for local Violin tutor, highlighting key services and clear contact details.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Business Card Design -->
-      <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
-        <div style="background: #f1f5f9; position: relative; overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
-          <img src="LCBC-01.jpg" alt="Leeza Cook - Violinist Business Card" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="margin-bottom: 10px;">
-              <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px;">Business Card Design</span>
-            </div>
-            <h3 style="font-size: 1.25rem; color: #0f172a; margin-top: 0; margin-bottom: 8px;">Leeza Cook - Violinist</h3>
-            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">
-              Print artwork layout designed for local musician, highlighting key offerings and clear contact details.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Project 4: Business Card Design -->
-      <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
-        <div style="background: #f1f5f9; position: relative; overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
-          <img src="Business-card-003.jpeg" alt="Terry's Outdoor & Property Maintenance Business Card" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="margin-bottom: 10px;">
-              <span style="background: #fef3c7; color: #b45309; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px;">Business Card Design</span>
-            </div>
-            <h3 style="font-size: 1.25rem; color: #0f172a; margin-top: 0; margin-bottom: 8px;">Terry's Outdoor & Property Maintenance</h3>
-            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">
-              Print artwork layout designed for local trade services, highlighting key offerings, badges, and clear contact details.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: A6 Leaflet / Flyer Design -->
-      <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column;">
-        <div style="background: #f1f5f9; position: relative; overflow: hidden; min-height: 250px; display: flex; align-items: center; justify-content: center; padding: 10px;">
-          <img src="A6-Terry-001e.jpg" alt="Terry's Outdoor & Property Maintenance A6 Leaflet Flyer" style="width: 100%; height: auto; max-height: 500px; object-fit: contain;">
-        </div>
-        <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="margin-bottom: 10px;">
-              <span style="background: #dcfce7; color: #15803d; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px;">Flyer & Leaflet Design</span>
-            </div>
-            <h3 style="font-size: 1.25rem; color: #0f172a; margin-top: 0; margin-bottom: 8px;">A6 Promotional Leaflet</h3>
-            <p style="color: #64748b; font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px;">
-              Custom promotional flyer artwork designed for door-to-door local marketing, supplied in high-resolution, print-ready PDF format.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- CONTACT & ENQUIRY FORM SECTION -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12">
                 
-                <!-- Contact Intro -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold uppercase tracking-wider">Get in Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Let's Get Your Tech Job Sorted</h2>
-                    <p class="text-slate-600 leading-relaxed text-base">
-                        Have a quick question or need a task carried out? Send over a message and I'll get back to you promptly with friendly, straightforward advice.
-                    </p>
-
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-lg font-bold shrink-0">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Response Time</h4>
-                                <p class="text-xs text-slate-600">Usually reply within a few hours on working days.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-bold shrink-0">
-                                <i class="fa-solid fa-comment-dots"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">No Obligation Quotes</h4>
-                                <p class="text-xs text-slate-600">Free upfront estimates before any work begins.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#events" class="nav-link">Events</a>
+                    <a href="#listen" class="nav-link">Listen</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                    <a href="#contact" class="btn btn-primary">Book Now</a>
                 </div>
 
-                <!-- Form Card -->
-                <div class="lg:col-span-7">
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm space-y-5">
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="form-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name *</label>
-                                <input type="text" id="form-name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
-                            </div>
-                            <div>
-                                <label for="form-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address *</label>
-                                <input type="email" id="form-email" required placeholder="sarah@example.co.uk" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="form-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number (Optional)</label>
-                                <input type="tel" id="form-phone" placeholder="07123 456789" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm">
-                            </div>
-                            <div>
-                                <label for="form-service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Service Required</label>
-                                <select id="form-service" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm bg-white">
-                                    <option value="General Enquiry">General Tech Enquiry</option>
-                                    <option value="Computer & Technology Help (£30/hr)">Computer / Tech Help (£30/hr)</option>
-                                    <option value="Website Updates (£30/hr or fixed from £40)">Website Updates / Tweaks</option>
-                                    <option value="Simple Business Website (from £400)">Simple Business Website (from £400)</option>
-                                    <option value="Website Care Plan (£40/month)">Website Maintenance Care Plan (£40/mo)</option>
-                                    <option value="Business Cards & Print Design (from £35)">Business Card / Flyer Artwork Design</option>
-                                    <option value="Digital Business Support (£30/hr)">Digital Business Support (£30/hr)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="form-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">How Can I Help You? *</label>
-                            <textarea id="form-message" rows="4" required placeholder="Please describe what you need assistance with..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-md transition-all hover:shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-envelope"></i>
-                            Send Message / Request Help
-                        </button>
-                    </form>
-                </div>
-
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-8 mb-8">
-                <div class="md:col-span-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">
-                            <i class="fa-solid fa-laptop-code text-base"></i>
-                        </div>
-                        <span class="text-lg font-bold text-white">Practical Digital & Computer Support</span>
-                    </div>
-                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-                        Friendly, jargon-free computer, website, and digital support for individuals and small businesses.
-                    </p>
-                </div>
-
-                <div class="md:col-span-3">
-                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Quick Navigation</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#calculator" class="hover:text-white transition-colors">Cost Estimator</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing Summary</a></li>
-                        <li><a href="#rules" class="hover:text-white transition-colors">Guarantees</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-3">
-                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Pricing Note</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Prices listed are introductory rates while expanding customer portfolio. Clear fixed price agreed prior to starting work.
-                    </p>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-                <p>&copy; <span id="year"></span> Practical Digital & Computer Support. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SUCCESS MODAL -->
-    <div id="modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl border border-slate-100">
-            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl">
-                <i class="fa-solid fa-paper-plane"></i>
-            </div>
-            <h3 class="text-xl font-extrabold text-slate-900">Email App Opening!</h3>
-            <p class="text-sm text-slate-600">Your default email application has been launched with all your enquiry details pre-filled. Simply click <strong>Send</strong> in your mail app to transmit your request!</p>
-            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all">
-                Close Confirmation
-            </button>
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#events" onclick="toggleMenu()">Events</a>
+        <a href="#listen" onclick="toggleMenu()">Listen</a>
+        <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+    
+    <div class="background-container">
+        <div class="text-container">
+            <!-- Optional text can go here -->
         </div>
     </div>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
+    <!-- About Section (Top Priority) -->
+
+    <section id="about" class="about-hero bg-paper">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Text Content -->
+                <div class="about-content">
+                    <div class="tag">
+                        <span class="dot"></span> Accepting Bookings 2026/27
+                    </div>
+                    <h2>About <span style="font-family: var(--font-serif)">Leeza Cook</span></h2>
+                    
+                    <div class="about">
+                        <p>Leeza Cook is a professional violinist who has been playing since the age of 10 and has been performing as a vocalist for the past 3 years. Trained at Burnt Mill Music School and performing with ensembles from a young age, she joined Harlow Youth Orchestra at 12, where the orchestra was conducted by a member of the prestigious Alberni String Quartet.</p>
+                        
+<p>With many years of experience performing at private events, Leeza combines exceptional technical precision with a rich, warm, deeply expressive tone - both on violin and through her voice. Her versatility as a violinist and vocalist allows her to create a truly personal music experience, whether providing elegant instrumental arrangements, captivating vocals, or a combination of both.</p>
+
+<p>The result is music that feels elegant, heartfelt, and intensely personal — creating an atmosphere that stays with people long after the final note.
+Whether you’re planning an intimate ceremony, a relaxed garden reception, or a grand celebration, her performances are always thoughtfully chosen to support the mood, feel completely natural in your setting, and beautifully reflect your unique story.</p>
+                        <br>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#contact" class="btn btn-primary">Contact</a>
+                        <a href="#listen" class="btn btn-outline">Listen to Samples</a>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="about-image-wrapper">
+                    <img src="./image/Leeza-004.png" alt="Leeza Cook Violinist">
+                </div>
+            </div>
+            
+            <!-- Duo Info -->
+            <div class="duo-card">
+                     <div class="duo-thumb">
+                         <img src="./image/002.jpeg" alt="Duo">
+                     </div>
+                       <div>
+                            <h3 style="margin-bottom: 0.25rem;">Whistler's Mother Duo</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Also available as a violin & guitar duo. Specialising in blues, rock fusion, and Irish folk. Ideal for wedding breakfasts or evening receptions, and bespoke events where you would like a fuller musical backdrop while still keeping things refined and conversational.
+          </p>
+          <p style="margin-top:8px;">
+            <a href="https://www.facebook.com/share/1BgRWr6Kbd/" class="facebook-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>  Whistler's Mother on Facebook
+            </a>
+          </p>
+          <p><a href="https://youtube.com/@leezacook?si=ONQ-52IZ7YuUr8Wk">
+                    <i class="fab fa-youtube" style="color: red; margin-right: 8px;"></i>Whistler's Mother on YouTube</p>
+                </a>
+                       </div>     
+                    </div>
+                </div>
+</section>
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What I Offer</span>
+                <h2>Curated Services</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">&#128276;</div>
+                    <h3>Wedding Packages</h3>
+                    <p>Packages for your special day start from as little as £250</p>
+                    <p>Whistler's Mother Duo - Evening Performance £600</p>
+                    <div class="service-note">Please enquire via email with your requirements for a tailored quote.</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">♥</div>
+                    <h3>Ceremony Music</h3>
+                    <p>Romantic, modern, or contemporary selections to accompany your walk down the aisle, signing of the register, and exit as newlyweds.</p>
+                    <div class="service-note">Tailored entrance & exit pieces.</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">♪</div>
+                    <h3>Cocktail Hour</h3>
+                    <p>Soft, elegant background music to elevate your drinks reception or wedding breakfast without overpowering conversation.</p>
+                    <div class="service-note">Curated playlists for your venue.</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">★</div>
+                    <h3>Events/Custom Song Requests</h3>
+                    <p>Special songs arranged just for your day – from timeless classics to modern favourites – creating moments that feel personal.</p>
+                    <div class="service-note">Advance notice recommended.</div>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon">⚘</div>
+                    <h3>Funeral & Memorial</h3>
+                    <p>Gentle, respectful violin music to accompany funeral services, memorials, and celebrations of life.</p>
+                    <p>Prices start from as little as £225</p>
+                    <div class="service-note">Entrance, reflection, & committal.</div>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon">♪</div>
+                    <h3>Whistler's Mother</h3>
+                    <p>We are a blues/folk/rock fusion duo based in Suffolk, available for birthdays, special events and pubs. We play an eclectic mix of blues, folk rock and Irish folk.</p>
+                    <p>2 x 45 min sets - £270 - with an additional travelling fee over 15 miles.</p>
+                    <div class="service-note"></p>
+          <p style="margin-top:8px;">
+            <a href="https://www.facebook.com/share/1BgRWr6Kbd/" class="facebook-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>  Whistler's Mother on Facebook
+            </a>
+            <p><a href="https://youtube.com/@leezacook?si=ONQ-52IZ7YuUr8Wk">
+                    <i class="fab fa-youtube" style="color: red; margin-right: 8px;"></i>Whistler's Mother on YouTube</p>
+                </a>
+                </div>
+                 <!-- Card 6 Image -->
+    <img src="./image/WM-01.jpg"
+         alt="Leeza Cook - Violinist & Vocalist"
+         style="width: 100%; height: auto; margin-top: 1.5rem; border-radius: 0.75rem;">
+  
+          </p> </div>
+                
+                <!-- Card 7 -->
+                <div class="service-card">
+                    <div class="service-icon">🎙️</div>
+                    <h3>Session Violinist & Vocals</h3>
+                    <p>Studio & Live Session work - available for live vocal performances, and collaborative projects.</p>
+                    <div class="service-note">
+                    <a href="https://youtube.com/@leezacook-z6m?si=v_-8R0-xW0fUSRBy">
+                    <i class="fab fa-youtube" style="color: red; margin-right: 8px;"></i>Leeza Cook on YouTube
+                </a>
+                </div>
+                <!-- Card 7 Image -->
+    <img src="./image/Leeza-015a.png"
+         alt="Leeza Cook - Violinist & Vocalist"
+         style="width: 100%; height: auto; margin-top: 1.5rem; border-radius: 0.75rem;">
+                </div>
+                
+                <!-- Card 8 -->
+<div class="service-card">
+    <div class="service-icon">🎻</div>
+    <h3>Violin Tutoring Lessons</h3>
+    <p>One-to-one violin lessons for all ages, from beginners to intermediate levels. Tailored lessons to build technique, grounding & confidence, and a love of music.</P>
+    <p> Based in Ipswich - Providing Mobile Tutoring for Suffolk, and parts of Norfolk.</P>
+    <p> Prices: £25 per 30 minute lesson or 4 x 30 minute lessons for £90.</p>
+    <div class="service-note">Please enquire via Phone, Email or Online Booking Calendar.</div>
+              
+</div>
+               </div>
+        </div>
+    </section>
+    
+    <!-- Upcoming Events Section -->
+<section id="events" class="section upcoming-events-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Calendar</span>
+            <h2>Upcoming Events</h2>
+        </div>
+
+        <div class="events-grid">
+            <!-- Event 1 -->
+<div class="event-card" data-date="2026-10-24">
+    <div class="event-image">
+        <img src="./image/Leeza-event01.jpeg" alt="Harvest Supper">
+    </div>
+    <div class="event-content">
+        <span class="event-status-badge badge-upcoming">Upcoming</span>
+        <h3>Harvest Supper</h3>
+        <p class="event-date"><i class="fas fa-calendar"></i> Saturday 24th October 2026</p>
+        <p class="event-time"><i class="fas fa-clock"></i> 7 pm – 10:30 pm</p>
+        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Hitcham Village Hall</p>
+    </div>
+      </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Listen Section -->
+    <section id="listen" class="section">
+        <div class="container text-center">
+            <div class="section-header">
+                <h2>Listen to Samples</h2>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">A selection of solo and duo recordings.</p>
+            </div>
+            <div class="player-container">
+                <div class="player-header">
+                    <div class="track-info">
+                        <div class="album-art">♫</div>
+                        <div style="text-align: left; overflow: hidden;">
+                            <h3 id="playerTitle" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Select a track</h3>
+                            <p id="playerArtist" style="opacity: 0.8; font-size: 0.9rem;">Leeza Cook</p>
+                        </div>
+                    </div>
+                    <div class="progress-container" onclick="seek(event)">
+                        <div class="progress-bar">
+                            <div id="progressFilled" class="progress-filled"></div>
+                        </div>
+                    </div>
+                    <div class="time-stamps">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" onclick="prevTrack()">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                        </button>
+                        <button class="play-btn" onclick="togglePlay()">
+                            <svg id="playIcon" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" style="display:block"><path d="M8 5v14l11-7z"/></svg>
+                            <svg id="pauseIcon" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                        </button>
+                        <button class="control-btn" onclick="nextTrack()">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="playlist" id="playlistContainer">
+                    <!-- JS generates items here -->
+                </div>
+            </div>
+            <audio id="audioElement" ontimeupdate="updateProgress()" onended="nextTrack()" onloadedmetadata="updateDuration()"></audio>
+        </div>
+    </section>
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews-section">
+        <div class="bg-shape-1"></div>
+        <div class="container">
+            <div class="section-header" style="position: relative; z-index: 10;">
+                <h2 style="color: white">Reviews</h2>
+            </div>
+            <div class="reviews-grid">
+            
+               <!-- Review 1 -->
+                <div class="review-card">
+                    <p class="review-quote">" Whistlers Mother were absolutely incredible and made our wedding reception unforgettable. From the moment they started playing, they had everyone captivated.
+Their musicianship was outstanding, with a fantastic mix of beautiful Irish/Celtic music and classic rock that had something for everyone. The sound quality was exceptional, and every song was performed with so much energy and skill.
+One of the highlights was the amazing audience interaction. The violinist wandered through the crowd while playing, creating such a fun,engaging atmosphere and making everyone feel part of the performance.
+We've had so many guests comment on how brilliant they were. We honestly couldn't have asked for better entertainment and would highly recommend Whistlers Mother for weddings, parties, or any special event. They were simply fantastic! "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">C</div>
+                        <span>Catherine MacLean</span>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <p class="review-quote">" Leeza Cook is a talented, energetic and charismatic performer who can match the mood of any occasion or read a crowd instantly either with a buoyant, jaunty tune or slow things down to a serious and sombre mood with her skilful playing  and amazing vocals.  She is always welcomed at Hitcham Village Hall, and is much appreciated by every audience in any type of event with her warm, friendly personality.   She's always a hit either playing on her own or with "Whistler’s Mother" or in a larger group.  Having seen her many times at large outdoor events she is dynamic when warming up a huge group of people and keeping the atmosphere upbeat throughout her performance. She is a true professional! "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">M</div>
+                        <span>Melanie Rieger</span>
+                    </div>
+                </div>
+               <!-- Review 3 -->
+                <div class="review-card">
+                    <p class="review-quote">" I first heard Leeza about 2 years ago, she was busking at the Wild Wood festival. It was very obvious she was an exceptional violinist and entertainer. I have also heard her entertaining groups in a background atmosphere setting. A talented musician and very good entertainer. "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">T</div>
+                        <span>Trevor</span>
+                    </div>
+                </div>
+               <!-- Review 4 -->
+                <div class="review-card">
+                    <p class="review-quote">" Leeza caught my attention playing her violin with great feeling. I really enjoyed listening and watching her and I hope to see her again in the future. "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">D</div>
+                        <span>Dorothy</span>
+                    </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <p class="review-quote">" We had Whistler's Mother play at Kevin's birthday party here in the garden and they were great. Banging out Rock, Pop and Irish classics that got the whole place going. We would recommend them to anyone. "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">D</div>
+                        <span>Debbie</span>
+                    </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <p class="review-quote">" We have had Whistler's Mother play a number of times at the Kings Head in Bildeston. They are brilliant! They always get everyone singing and dancing and have been known to get up on the tables and perform unplugged, creating real excitement with the audience. "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">S</div>
+                        <span>Sophie McCreddie</span>
+                    </div>
+                </div>    
+                <!-- Review 7 -->
+                <div class="review-card">
+                    <p class="review-quote">" These guys came to play for us the other week, and my GOODNESS what a BRILLIANT show. Every single person was joining in and enjoying it. Absolutely fantastic. 10/10 would recommend. "</p>
+                    <div class="review-author">
+                        <div class="author-avatar">Y</div>
+                        <span>Ysobel</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Info -->
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Get in Touch</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">I would love to hear about your event, please contact me via email or the Event Booking Service for a tailored quote.</p>
+                    <div class="contact-info-item">
+                        <div class="icon-box">✉</div>
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #8808e9; font-weight: bold;">Email Direct</div>
+                            <a href="mailto:leezacookviolinist@gmail.com" style="font-weight: 500;">leezacookviolinist@gmail.com</a>
+                            <div style="font-weight: 500;">I'll respond within 24-48 hours.</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-box">📞</div>
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #8808e9; font-weight: bold;">Telephone</div>
+                            <div style="font-weight: 500;">(+44) 07872 856888</div>
+                        </div>
+                    </div>
+                       <div class="contact-info-item">
+                        <div class="icon-box">📅</div>
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #8808e9; font-weight: bold;">Booking</div>
+                            <div style="font-weight: 500;">Typically booking 6-12 months ahead.</div>
+                            <div style="font-weight: 500;">Short notice bookings considered.</div>
+                        </div>
+                    </div>                 
+                   <div class="contact-info-item">
+                        <div class="icon-box">📍</div>
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #8808e9; font-weight: bold;">Location</div>      
+                            <div style="font-weight: 500;">Based in Ipswich, Suffolk.</div>
+                            <div style="font-weight: 500;">Performing Nationwide & across Europe.</div>
+                        </div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="booking-calendar" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Availability</span>
+            <h2>Check Availability & Book</h2>
+            <div style="font-weight: 500;">View my live availability below and reserve a date for a performance consultation.</div>
+            <div style="font-weight: 500;">All final event bookings are confirmed via a formal contract.</div>
+        </div>
+        <div class="calendar-container">
+            <div class="responsive-iframe-container">
+                <iframe 
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2YDo65-r2-xYWw-lHLQnMfKjQ3-5rL_lrxsI_eTfIcyMOdz08L5A4jDNAKYauoZ73S1mxt2QsL?gv=true" 
+                    style="border: 0" 
+                    class="booking-iframe">
+                </iframe>
+            </div>
+            <p class="booking-note">
+                Don't see a slot that fits? <a href="mailto:leezacookviolinist@gmail.com">Send me an email</a>.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div style="margin-bottom: 1rem; font-weight: bold;">Leeza Cook</div>
+        <!-- Facebook Share Link -->
+        <p style="margin-bottom: 0.75rem;">
+            <a 
+              href="https://www.facebook.com/sharer/sharer.php?u=https://www.leezacookviolinist.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="facebook-link"
+            >
+                <i class="fab fa-facebook-f"></i> Share this website on Facebook
+            </a>
+        </p>
+
+        <p>&copy; 2025 Leeza Cook. All rights reserved.</p>
+        <p>Built with ♥ by <a href="https://m41c01m-001.github.io/Website-03/" target="_blank" rel="noopener">Malcolm Brien</a></p>   
+    </div>
+</footer>
+    <button id="scrollTop" class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        ↑   
+    </button>
     <script>
-        // Set dynamic year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // --- DATA ---
+        const TRACKS = [
+            { title: "You Do Something to Me by Paul Weller", artist: "Leeza Cook", url: "./sound/YouDoSomethingtoMe.mp3" },
+            { title: "Yours by Ella Henderson", artist: "Leeza Cook", url: "./sound/Yours.mp3" },
+            { title: "Wings by Birdy", artist: "Leeza Cook", url: "./sound/Wings.mp3" },
+            { title: "Tamlin", artist: "Whistler's Mother Duo", url: "./sound/Tamlin.mp3" },
+            { title: "Aint No Love", artist: "Whistler's Mother Duo", url: "./sound/Aint No Love.mp3" },
+            { title: "Have You Ever Seen The Rain", artist: "Whistler's Mother Duo", url: "./sound/Have You Ever Seen The Rain.mp3" }
 
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+            
+        ];
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // --- AUDIO PLAYER LOGIC ---
+        let currentTrackIndex = 0;
+        let isPlaying = false;
+        const audio = document.getElementById('audioElement');
+        const playlistContainer = document.getElementById('playlistContainer');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+
+        function initPlayer() {
+            // Build Playlist
+            playlistContainer.innerHTML = TRACKS.map((track, index) => `
+                <div class="track-item ${index === 0 ? 'active' : ''}" onclick="loadTrack(${index})">
+                    <div class="track-number">${index + 1}</div>
+                    <div style="flex:1">
+                        <div style="font-weight: 500; font-size: 0.9rem;">${track.title}</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">${track.artist}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            loadTrack(0, false);
+        }
+
+        function loadTrack(index, autoPlay = true) {
+            currentTrackIndex = index;
+            const track = TRACKS[index];
+            audio.src = track.url;
+            
+            document.getElementById('playerTitle').innerText = track.title;
+            document.getElementById('playerArtist').innerText = track.artist;
+
+            // Update Active UI
+            const items = document.querySelectorAll('.track-item');
+            items.forEach(el => el.classList.remove('active'));
+            if(items[index]) items[index].classList.add('active');
+
+            if (autoPlay) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    updatePlayBtn();
+                }).catch(e => console.log("Audio play blocked until user interaction"));
+            }
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                isPlaying = true;
+            } else {
+                audio.pause();
+                isPlaying = false;
+            }
+            updatePlayBtn();
+        }
+
+        function updatePlayBtn() {
+            if (isPlaying) {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            } else {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        }
+
+        function nextTrack() {
+            let nextIndex = (currentTrackIndex + 1) % TRACKS.length;
+            loadTrack(nextIndex);
+        }
+
+        function prevTrack() {
+            let prevIndex = (currentTrackIndex - 1 + TRACKS.length) % TRACKS.length;
+            loadTrack(prevIndex);
+        }
+
+        function updateProgress() {
+            const { duration, currentTime } = audio;
+            if (duration) {
+                const progressPercent = (currentTime / duration) * 100;
+                document.getElementById('progressFilled').style.width = `${progressPercent}%`;
+                
+                document.getElementById('currentTime').innerText = formatTime(currentTime);
+            }
+        }
+
+        function updateDuration() {
+            document.getElementById('duration').innerText = formatTime(audio.duration);
+        }
+
+        function seek(e) {
+            const width = e.target.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        }
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        // --- UI LOGIC ---
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            if (window.scrollY > 300) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
         });
 
-        // Filter Services Tabs
-        function filterServices(category) {
-            const cards = document.querySelectorAll('.service-card');
-            const tabs = document.querySelectorAll('.tab-btn');
-
-            // Update Tab Active Style
-            tabs.forEach(tab => {
-                if (tab.dataset.category === category) {
-                    tab.className = "tab-btn active px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-brand-600 text-white shadow-sm";
-                } else {
-                    tab.className = "tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200";
-                }
-            });
-
-            // Filter Cards
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.cat === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+        // Init
+        initPlayer();
+        
+ // Auto-tag past events based on data-date attribute
+document.querySelectorAll('.event-card[data-date]').forEach(card => {
+    const eventDate = new Date(card.dataset.date + 'T23:59:59');
+    if (eventDate < new Date()) {
+        card.classList.add('past-event');
+        const badge = card.querySelector('.event-status-badge');
+        if (badge) {
+            badge.textContent = 'Past Event';
+            badge.className = 'event-status-badge badge-past';
         }
-
-        // Calculator Interactive Logic
-        function updateCalculator() {
-            const hours = parseInt(document.getElementById('hours-range').value) || 0;
-            const hasWeb = document.getElementById('calc-web').checked;
-            const hasMaint = document.getElementById('calc-maint').checked;
-            const hasCard = document.getElementById('calc-card').checked;
-            const hasFlyer = document.getElementById('calc-flyer').checked;
-
-            document.getElementById('hours-val').textContent = hours + (hours === 1 ? ' hr' : ' hrs');
-
-            let total = 0;
-            let items = [];
-
-            if (hours > 0) {
-                const hourlyCost = hours * 30;
-                total += hourlyCost;
-                items.push(`<li>• ${hours} hr(s) Tech Support (@ £30/hr): <strong>£${hourlyCost}</strong></li>`);
-            }
-
-            if (hasWeb) {
-                total += 400;
-                items.push(`<li>• Simple Business Website: <strong>£400</strong></li>`);
-            }
-
-            if (hasMaint) {
-                total += 40;
-                items.push(`<li>• Monthly Website Care: <strong>£40/mo</strong></li>`);
-            }
-
-            if (hasCard) {
-                total += 35;
-                items.push(`<li>• Business Card Design: <strong>£35</strong></li>`);
-            }
-
-            if (hasFlyer) {
-                total += 45;
-                items.push(`<li>• Flyer / Poster Artwork: <strong>£45</strong></li>`);
-            }
-
-            const breakdownEl = document.getElementById('calc-breakdown');
-            const totalEl = document.getElementById('calc-total');
-
-            if (items.length === 0) {
-                breakdownEl.innerHTML = `<p class="text-slate-400 italic">No services selected yet. Use the toggles on the left to start.</p>`;
-            } else {
-                breakdownEl.innerHTML = `<ul class="space-y-1.5">${items.join('')}</ul>`;
-            }
-
-            totalEl.textContent = `£${total}`;
+    } else {
+        const badge = card.querySelector('.event-status-badge');
+        if (badge) {
+            badge.textContent = 'Upcoming';
+            badge.className = 'event-status-badge badge-upcoming';
         }
-
-        function bookCalculatedEstimate() {
-            const total = document.getElementById('calc-total').textContent;
-            const msgInput = document.getElementById('form-message');
-            const contactSection = document.getElementById('contact');
-            
-            let details = "I would like to enquire about the estimated total of " + total + " from the online calculator.";
-            msgInput.value = details;
-
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Preselect Service in Contact Form
-        function preselectService(serviceName) {
-            const selectEl = document.getElementById('form-service');
-            for (let i = 0; i < selectEl.options.length; i++) {
-                if (selectEl.options[i].value === serviceName) {
-                    selectEl.selectedIndex = i;
-                    break;
-                }
-            }
-        }
-
-        // Form Submit Handler using Mailto Link
-        function handleFormSubmit(e) {
-            e.preventDefault();
-
-            // Destination business email
-            const recipientEmail = "m41c01@hotmail.co.uk";
-
-            // Extract form values
-            const name = document.getElementById('form-name').value;
-            const email = document.getElementById('form-email').value;
-            const phone = document.getElementById('form-phone').value || "Not provided";
-            const service = document.getElementById('form-service').value;
-            const message = document.getElementById('form-message').value;
-
-            // Construct email subject & body
-            const subject = encodeURIComponent(`Website Enquiry: ${service} - ${name}`);
-            const bodyText = `Hello Practical Digital,
-
-I am requesting support with the following details:
-
-- Name: ${name}
-- Email: ${email}
-- Phone: ${phone}
-- Service Requested: ${service}
-
-Details / Message:
-${message}
-
-Thank you,
-${name}`;
-
-            const body = encodeURIComponent(bodyText);
-
-            // Trigger mailto link
-            window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-
-            // Show confirmation modal
-            document.getElementById('modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
+    }
+});       
+        
     </script>
+
+<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fleezacookviolinist.com%2F&label=Visitors%3A+Today+%2F+All+Time&icon=suit-heart-fill&color=%236610f2&message=&style=plastic&tz=GB" alt="">
+   
 </body>
 </html>
