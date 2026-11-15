@@ -800,6 +800,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: stretch;      /* default, but explicit */
 }
 
 @media (min-width: 768px) {
@@ -818,6 +819,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
+    height: 100%;              /* fill the grid row */
 }
 
 .event-card:hover {
@@ -827,7 +829,7 @@
 
 .event-image {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 16 / 10;     /* replaces height: 250px */
     overflow: hidden;
     background: #ddd;
 }
@@ -835,7 +837,8 @@
 .event-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;      /* fills the box, crops overflow */
+    object-position: center; /* keeps the subject centred */
 }
 
 .event-content {
@@ -1044,7 +1047,7 @@ Whether you’re planning an intimate ceremony, a relaxed garden reception, or a
          alt="Leeza Cook - Violinist & Vocalist"
          style="width: 100%; height: auto; margin-top: 1.5rem; border-radius: 0.75rem;">
   
-          </p> </div>
+          </div>
                 
                 <!-- Card 7 -->
                 <div class="service-card">
@@ -1085,6 +1088,7 @@ Whether you’re planning an intimate ceremony, a relaxed garden reception, or a
         </div>
 
         <div class="events-grid">
+        
             <!-- Event 1 -->
 <div class="event-card" data-date="2026-10-24">
     <div class="event-image">
@@ -1098,6 +1102,21 @@ Whether you’re planning an intimate ceremony, a relaxed garden reception, or a
         <p class="event-location"><i class="fas fa-map-marker-alt"></i> Hitcham Village Hall</p>
     </div>
       </div>
+      
+            <!-- Event 2 -->
+<div class="event-card" data-date="2026-11-24">
+    <div class="event-image">
+        <img src="./image/Demo-01.jpg" alt="Harvest Supper">
+    </div>
+    <div class="event-content">
+        <span class="event-status-badge badge-upcoming">Upcoming</span>
+        <h3>Harvest Supper</h3>
+        <p class="event-date"><i class="fas fa-calendar"></i> Tuesday 24th November 2026</p>
+        <p class="event-time"><i class="fas fa-clock"></i> 7 pm – 10:30 pm</p>
+        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Hitcham Village Hall</p>
+    </div>
+      </div>      
+      
         </div>
     </div>
 </section>
